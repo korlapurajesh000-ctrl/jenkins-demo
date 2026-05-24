@@ -1,83 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Rajesh Family</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajesh Family Tree</title>
 
   <style>
     body {
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      font-family: Arial;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
       color: white;
+      text-align: center;
       overflow-x: hidden;
     }
 
     h1 {
       margin-top: 30px;
       font-size: 50px;
-      animation: bounce 2s infinite;
+      animation: glow 2s infinite alternate;
     }
 
-    .card {
-      background: rgba(255,255,255,0.2);
-      margin: 20px auto;
-      padding: 20px;
-      width: 300px;
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffff;
+      }
+
+      to {
+        text-shadow: 0 0 25px #00ffff;
+      }
+    }
+
+    .tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .member {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00ffff;
       border-radius: 20px;
+      padding: 20px;
+      width: 250px;
+      margin: 15px;
       transition: 0.5s;
+      box-shadow: 0 0 20px rgba(0,255,255,0.4);
     }
 
-    .card:hover {
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.4);
+    .member:hover {
+      transform: scale(1.08);
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    @keyframes bounce {
-      0% {transform: translateY(0);}
-      50% {transform: translateY(-10px);}
-      100% {transform: translateY(0);}
+    .parents,
+    .children,
+    .grandchildren {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .line {
+      width: 4px;
+      height: 50px;
+      background: #00ffff;
+    }
+
+    h2 {
+      margin: 10px 0;
+      color: #00ffff;
+    }
+
+    p {
+      color: #ddd;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      font-size: 18px;
     }
   </style>
 </head>
 
 <body>
 
-<h1>🌟 My Beautiful Family 🌟</h1>
+  <h1>Rajesh Family Tree</h1>
 
-<div class=\"card\">
-  <h2>👨 Malleswar Rao</h2>
-  <p>Father</p>
-</div>
+  <div class="tree">
 
-<div class=\"card\">
-  <h2>👩 Mangamma</h2>
-  <p>Mother</p>
-</div>
+    <!-- Parents -->
+    <div class="parents">
 
-<div class=\"card\">
-  <h2>👩 Gayathri</h2>
-  <p>Daughter</p>
-</div>
+      <div class="member">
+        <h2>Malleswar Rao</h2>
+        <p>Father</p>
+      </div>
 
-<div class=\"card\">
-  <h2>👨 Dhilip Kumar</h2>
-  <p>Gayathri Husband</p>
-</div>
+      <div class="member">
+        <h2>Mangamma</h2>
+        <p>Mother</p>
+      </div>
 
-<div class=\"card\">
-  <h2>👧 Lakshita Chodya</h2>
-  <p>Child</p>
-</div>
+    </div>
 
-<div class=\"card\">
-  <h2>👦 Vivan Varshit</h2>
-  <p>Child</p>
-</div>
+    <div class="line"></div>
 
-<div class=\"card\">
-  <h2>🧑‍💻 Rajesh</h2>
-  <p>Future DevOps Engineer</p>
-</div>
+    <!-- Children -->
+    <div class="children">
+
+      <div class="member">
+        <h2>Gayathri</h2>
+        <p>Daughter</p>
+      </div>
+
+      <div class="member">
+        <h2>Rajesh</h2>
+        <p>DevOps Learner</p>
+        <p>Unmarried</p>
+      </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <!-- Gayathri Family -->
+    <div class="children">
+
+      <div class="member">
+        <h2>Dhilip Kumar</h2>
+        <p>Gayathri Husband</p>
+      </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <!-- Kids -->
+    <div class="grandchildren">
+
+      <div class="member">
+        <h2>Lakshita Chodya</h2>
+        <p>Daughter</p>
+      </div>
+
+      <div class="member">
+        <h2>Vivan Varshit</h2>
+        <p>Son</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    Created by Rajesh while learning DevOps, Docker, Jenkins & CI/CD
+  </footer>
 
 </body>
+
 </html>
